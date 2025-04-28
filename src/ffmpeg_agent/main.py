@@ -26,7 +26,7 @@ class FfmpegAgent:
 
 
     @function
-    def ffmpeg_agent(self, task: str, source_directory_arg: dagger.Directory) -> dagger.Directory:
+    def ffmpeg_task(self, task: str, source_directory_arg: dagger.Directory) -> dagger.Directory:
         """Returns a Directory containing the output of the ffmpeg task"""
 
         container = (dag.container()
