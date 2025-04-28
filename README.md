@@ -13,13 +13,13 @@ Inclusive, é possível usar Docker Model Runner ao invés de Ollama.
 # Comandos
 
 ```
-dagger -m <diretorio clonado, ou o repositório git> call ffmpeg-agent --task "<descreva a tarefa que deseja que o agente execute>" --source-Directory-arg <diretório onde estão os arquivos de vídeo ou áudio> export --path <diretório onde você deseja salvar os arquivos>
+dagger -m <diretorio clonado, ou o repositório git> call ffmpeg-task --task "<descreva a tarefa que deseja que o agente execute>" --source-Directory-arg <diretório onde estão os arquivos de vídeo ou áudio> export --path <diretório onde você deseja salvar os arquivos>
 ```
 
 Exemplo:
 
 ```
-dagger -m ~/Code/Agents/agent-dagger-ffmpeg/ call ffmpeg-agent --task "pegue o vídeo que tem p_e_b no nome e extraía o áudio para .mp3 e .ogg nome base do arquivo é áudio, mas extraia apenas os 5 primeiros segundos pro mp3 e 7 segundos pro ogg" --source-Directory-arg . export --path .
+dagger -m ~/Code/Agents/agent-dagger-ffmpeg/ call ffmpeg-task --task "pegue o vídeo que tem p_e_b no nome e extraía o áudio para .mp3 e .ogg nome base do arquivo é áudio, mas extraia apenas os 5 primeiros segundos pro mp3 e 7 segundos pro ogg" --source-Directory-arg . export --path .
 ```
 
 # Opções adicionais
