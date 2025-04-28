@@ -20,7 +20,7 @@ class FfmpegAgent:
                 .from_("jrottenberg/ffmpeg")
                 .with_mounted_directory("/app", source_directory_arg)
                 .with_workdir("/app")
-                .with_exec(command)
+                .with_exec(command.split(" "))
         )
 
 
