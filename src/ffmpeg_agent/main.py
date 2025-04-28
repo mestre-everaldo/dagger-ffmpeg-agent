@@ -5,6 +5,27 @@ from dagger import dag, function, object_type
 @object_type
 class FfmpegAgent:
     @function
+    def ffmpeg_tool(self, command: str, source_directory_arg: dagger.Directory) -> dagger.Container:
+        """
+        Can convert multimedia files with ffmpeg
+
+        Args:
+            command: The command to execute
+            source_directory_arg: The directory containing the input files
+        Returns:
+            A container with the specified command and the output directory
+        """
+
+        return (dag.container()
+                .from_("jrottenberg/ffmpeg")
+                .with_mounted_directory("/app", source_directory_arg)
+                .with_workdir("/app")
+                .with_exec(command)
+        )
+
+
+
+    @function
     def ffmpeg_agent(self, task: str, source_directory_arg: dagger.Directory) -> dagger.Directory:
         """Returns a Directory containing the output of the ffmpeg task"""
 
